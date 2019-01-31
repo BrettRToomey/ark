@@ -1,2 +1,2 @@
 all:
-	kai -o ark src/main.kai
+	kkai -o ark src/main.kai

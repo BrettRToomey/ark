@@ -1,22 +1,57 @@
 charMap :: []string {
+    "X    X    X    X    X         X    ", // !
+    "                                   ", // "
+    "                                   ", // #
+    "                                   ", // $
+    "                                   ", // %
+    "                                   ", // &
+    "                                   ", // '
+    "                                   ", // (
+    "                                   ", // )
+    "                                   ", // *
+    "                                   ", // +
+    "                                   ", // ,
+    "                                   ", // -
+    "                              X    ", // .
+    "                                   ", // /
+
+    "XXXXXX   XX   XX   XX   XX   XXXXXX", // 0
+    "  X   XX    X    X    X    X   XXX ", // 1
+    "XXXX     X    X  XX  X   X    XXXXX", // 2
+    "XXXX     X    X XXX     X    XXXXX ", // 3
+    "X   XX   XX   XXXXXX    X    X    X", // 4
+    "XXXXXX    X    XXXX     X    XXXXX ", // 5
+    " XXX X    X    XXXX X   XX   X XXX ", // 6
+    "XXXXXX   X    X   X    X    X    X ", // 7
+    " XXX X   XX   X XXX X   XX   X XXX ", // 8
+    " XXX X   XX   X XXXX    X    X XXX ", // 9
+
+    "                                   ", // :
+    "                                   ", // ;
+    "                                   ", // <
+    "                                   ", // =
+    "                                   ", // >
+    "  XX  X  X    X   X    X        X  ", // ?
+    "                                   ", // @
+
     " XXX X   XX   XXXXXXX   XX   XX   X", // A
     "XXXX X   XX   XXXXX X   XX   XXXXX ", // B
     " XXX X   XX    X    X    X   X XXX ", // C
     "XXXX X   XX   XX   XX   XX   XXXXX ", // D
     "XXXXXX    X    XXXXXX    X    XXXXX", // E
     "XXXXXX    X    XXXXX     X    X    ", // F
-    "XXXXXX    X    X  XXX   XX   XXXXXX", // G
+    " XXX X    X    X  XXX   XX   X XXX ", // G
     "X   XX   XX   XXXXXXX   XX   XX   X", // H
-    "XXXXX  X    X    X    X    X  XXXXX", // I
+    " XXX   X    X    X    X    X   XXX ", // I
     "XXXXX    X    X    XX   XX   X XXX ", // J
     "X   XX  X X X  XX   X X  X  X X   X", // K
     "X    X    X    X    X    X    XXXXX", // L
     "X   XXX XXX X XX   XX   XX   XX   X", // M
     "X   XX   XXX  XX X XX  XXX   XX   X", // N
-    "XXXXXX   XX   XX   XX   XX   XXXXXX", // O
-    "XXXXXX   XX   XXXXXXX    X    X    ", // P
-    "XXXXXX   XX   XX   XX X XX  XXXXXXX", // Q
-    "XXXXXX   XX   XXXXXXX X  X  X X   X", // R
+    " XXX X   XX   XX   XX   XX   X XXX ", // O
+    "XXXX X   XX   XXXXX X    X    X    ", // P
+    " XXX X   XX   XX   XX X XX  XX XXX ", // Q
+    "XXXX X   XX   XXXXX X X  X  X X   X", // R
     "XXXXXX    X    XXXXX    X    XXXXXX", // S
     "XXXXX  X    X    X    X    X    X  ", // T
     "X   XX   XX   XX   XX   XX   X XXX ", // U
@@ -27,7 +62,6 @@ charMap :: []string {
     "XXXXX    X   X   X   X   X    XXXXX", // Z
     ""
 }
-
 /*
     " X X XX XXXXX XX XX X", // A
     "XX X XX XXX X XX XXX ", // B
@@ -87,9 +121,9 @@ main :: fn(argc: i32, argv: **u8) -> i32 {
 
                 index: u8
                 if char > "Z" {
-                    index = char - "a"
+                   index = char -  (0x21 + 0x20)
                 } else {
-                    index = char - "A"
+                    index = char - "!"
                 }
 
                 mask := charMap[index]
